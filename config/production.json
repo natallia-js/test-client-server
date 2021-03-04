@@ -1,4 +1,4 @@
 {
-  "port": 4005,
-  "baseUrl": "http://localhost:4000"
+  "port": 80,
+  "baseUrl": "https://test-my-client-server.herokuapp.com"
 }

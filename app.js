@@ -40,7 +40,7 @@ const PORT = config.get('port') || process.env.PORT || 4005;
 async function start() {
   try {
     // Запускаем http-сервер на указанном порту
-    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+    app.listen(PORT, '0.0.0.0', () => console.log(`Server started on port ${PORT}`));
   } catch (e) {
     console.log('Server Error', e.message);
     process.exit(1);
