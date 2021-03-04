@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Порт сервера
-const PORT = config.get('port') || 4005;
+const PORT = config.get('port') || process.env.PORT || 4005;
 
 /**
  * Действия, которые необходимо выполнить для запуска сервера.
