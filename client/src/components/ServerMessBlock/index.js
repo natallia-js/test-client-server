@@ -24,7 +24,8 @@ export const ServerMessBlock = () => {
 
   return (
     <div className="mainBlock">
-      {tData ? tData : loadDataErr}
+      <img src="/images/logo192.png" alt="img"></img>
+      <div>{tData ? tData : loadDataErr}</div>
     </div>
   )
 };
