@@ -1,5 +1,4 @@
 {
   "port": 4005,
-  "baseUrl": "https://test-my-client-server.herokuapp.com",
   "mongoURI": "mongodb+srv://TravelAppUser:TravelAppUserPassword@travelappcluster.httwj.mongodb.net/travelAppDB?retryWrites=true&w=majority"
 }

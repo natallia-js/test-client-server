@@ -1,5 +1,4 @@
 {
   "port": 4005,
-  "baseUrl": "http://localhost:4000",
   "mongoURI": "mongodb+srv://TravelAppUser:TravelAppUserPassword@travelappcluster.httwj.mongodb.net/travelAppDB?retryWrites=true&w=majority"
 }
