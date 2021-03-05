@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const config = require('config');
+const mongoose = require('mongoose');
 
 // Создаем объект приложения express
 const app = express();
