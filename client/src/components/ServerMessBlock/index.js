@@ -6,6 +6,8 @@ import './index.css';
 export const ServerMessBlock = () => {
   const [tData, setTData] = useState(null);
   const [loadDataErr, setLoadDataErr] = useState(null);
+  const [cData, setCData] = useState(null);
+  const [loadCDataErr, setLoadCDataErr] = useState(null);
 
   const { request } = useHttp();
 
@@ -27,6 +29,17 @@ export const ServerMessBlock = () => {
         setTData(null);
         setLoadDataErr(e.message);
       });
+
+    request('api/data/countries', 'GET', null)
+      .then(res => {
+        setCData(res);
+        setLoadCDataErr(null);
+      })
+      .catch(e => {
+        setCData(null);
+        setLoadCDataErr(e.message);
+      });
+
   }, []);
 
 
@@ -47,7 +60,6 @@ export const ServerMessBlock = () => {
         setSaveDataErr(e.msg);
       });
   };
-
 
 
   return (
@@ -88,6 +100,8 @@ export const ServerMessBlock = () => {
       </button>
       <div>{saveDataRes}</div>
       <div>{saveDataErr}</div>
+      <p>{cData}</p>
+      <p>{loadCDataErr}</p>
     </div>
   )
 };

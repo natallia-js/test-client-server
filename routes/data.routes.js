@@ -15,6 +15,19 @@ router.get('/info',
 });
 
 
+router.get('/countries',
+           async (req, res) => {
+  try {
+    const data = await Country.find();
+
+    res.status(201).json(data);
+
+  } catch (e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' });
+  }
+});
+
+
 router.post(
   '/addCountry',
   async (req, res) => {
@@ -27,7 +40,7 @@ router.post(
       res.status(201).json({ message: 'Информация успешно сохранена', countryId: country._id });
 
     } catch (e) {
-      res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' });
+      res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова', e });
     }
   }
 );
