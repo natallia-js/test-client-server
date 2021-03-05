@@ -39,6 +39,13 @@ const PORT = process.env.PORT || config.get('port') || 4005;
  */
 async function start() {
   try {
+    // Подключаемся с серверу БД
+    await mongoose.connect(config.get('mongoURI'), {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true
+    });
+
     // Запускаем http-сервер на указанном порту
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
   } catch (e) {
